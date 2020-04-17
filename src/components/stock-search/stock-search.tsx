@@ -14,7 +14,7 @@ export class StockSearch implements ComponentInterface {
         name: string
     }[] = [];
 
-    @Event() symbolSelected: EventEmitter<string>;
+    @Event({bubbles: true, composed: true}) symbolSelected: EventEmitter<string>;
 
     onFindStocks = (event: Event) => {
         event.preventDefault();

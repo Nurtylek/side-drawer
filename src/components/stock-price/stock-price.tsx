@@ -93,12 +93,13 @@ export class StockPrice implements ComponentInterface {
             })
             .catch(e => {
                 this.errorMessage = e.message;
+                this.fetchedPrice = null;
             });
     }
 
     render() {
         return (
-            <Host>
+            <Host class={this.errorMessage ? 'error': ''}>
                 <form onSubmit={this.onFetchStockPrice}>
                     <input type="text" id="stock-symbol"
                            // ref={el => this.stockInput = el}
