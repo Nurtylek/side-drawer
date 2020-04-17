@@ -1,4 +1,4 @@
-import {Component, ComponentInterface, Host, h, State, Prop, Watch} from '@stencil/core';
+import {Component, ComponentInterface, Host, h, State, Prop, Watch, Listen} from '@stencil/core';
 import {AV_API_KEY} from "../../global";
 
 @Component({
@@ -72,6 +72,14 @@ export class StockPrice implements ComponentInterface {
     componentDidUnload() {
         console.log('componentDidUnload')
     }
+
+    @Listen('body:symbolSelected')
+    onStockSymbolSelected(event: CustomEvent) {
+        console.log(event);
+        if (event.detail && event.detail !== this.stockSymbol) {
+            this.stockSymbol = event.detail;
+        }
+    };
 
     fetchStockPrice(stockSymbol: string) {
         fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=${AV_API_KEY}`)
