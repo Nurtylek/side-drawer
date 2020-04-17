@@ -31,27 +31,28 @@
 </head>
 <body>
     <button>Open side menu</button>
-    <side-drawer header="Main Menu">
-        <nav class="side-nav">
-            <ul>
-                <li><a href="">A link</a></li>
-                <li><a href="">Another Link</a></li>
-            </ul>
-        </nav>
-    </side-drawer>
+<!--    <side-drawer header="Main Menu">-->
+<!--        <nav class="side-nav">-->
+<!--            <ul>-->
+<!--                <li><a href="">A link</a></li>-->
+<!--                <li><a href="">Another Link</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--    </side-drawer>-->
+    <p>Lets test this new <my-tooltip text="This is a tooltip text">Tooltip!</my-tooltip></p>
 
     <script type="text/javascript">
-        const drawer = document.querySelector('side-drawer');
-        const btn = document.querySelector('button');
-        btn.addEventListener('click', () => {
-            if (!drawer.open) {
-                // drawer.open = true
-                drawer.onOpenDrawer();
-            }
-        });
-        // setTimeout(() => {
-        //     drawer.title = 'It Changed!'
-        // }, 3000);
+        // const drawer = document.querySelector('side-drawer');
+        // const btn = document.querySelector('button');
+        // btn.addEventListener('click', () => {
+        //     if (!drawer.open) {
+        //         // drawer.open = true
+        //         drawer.onOpenDrawer();
+        //     }
+        // });
+        // // setTimeout(() => {
+        // //     drawer.title = 'It Changed!'
+        // // }, 3000);
     </script>
 <!--    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>-->
 
