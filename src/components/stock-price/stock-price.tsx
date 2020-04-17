@@ -73,7 +73,7 @@ export class StockPrice implements ComponentInterface {
         console.log('componentDidUnload')
     }
 
-    @Listen('body:symbolSelected')
+    @Listen('symbolSelected', {target: "body"})
     onStockSymbolSelected(event: CustomEvent) {
         console.log(event);
         if (event.detail && event.detail !== this.stockSymbol) {
